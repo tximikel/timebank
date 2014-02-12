@@ -181,6 +181,7 @@ LANGUAGES = (
       ('es_ng', _('Spanish (neutral gender)')),
       ('en', _('English')),
       ('gl', _('Gallego')),
+      ('eu', _('Euskara')),
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
@@ -198,7 +199,6 @@ PUBLIC_USER_INFO = False
 #trukeados.net contributions; more info: http://trukeados.net/Software_moldaketak-adaptaciones
 #2013-01
 USERAREA_REQUIRED=False
-
 
 try:
     from local_settings import *
