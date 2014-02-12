@@ -25,6 +25,8 @@ from messages.models import Message
 from timebank.utils import (FormCharField, FormEmailField, FormDateField,
     FormCaptchaField)
 from  serv.forms import CustomCharField
+from serv.models import Area
+from django.conf import settings
 
 class RegisterForm(UserCreationForm):
     birth_date = FormDateField(label=_("Birth date"),
@@ -41,11 +43,15 @@ class RegisterForm(UserCreationForm):
         required=False, help_text="Example: 954 123 111")
     mobile_tlf = FormCharField(label=_("Mobile Telephone"), max_length=20,
         required=False, help_text="Example: 651 333 111")
+    area = forms.ModelChoiceField(None, label=_("Area"), required=settings.USERAREA_REQUIRED)
     captcha = FormCaptchaField()
+    def __init__(self, *args, **kwargs):
+        super(UserCreationForm, self).__init__(*args, **kwargs)
+        self.fields['area'].queryset = Area.objects.all().order_by('name')    
 
     class Meta:
         model = Profile
-        fields = ('username', 'first_name', 'last_name', 'email', 'address', 'birth_date', 'description', 'land_line', 'mobile_tlf')
+        fields = ('username', 'first_name', 'last_name', 'email', 'address', 'birth_date', 'description', 'land_line', 'mobile_tlf', 'area')
 
 class EditProfileForm(forms.ModelForm):
     photo = forms.ImageField(label=_("Avatar"), required=False)
@@ -67,10 +73,12 @@ class EditProfileForm(forms.ModelForm):
         required=False, help_text="Example: 954 123 111")
     mobile_tlf = FormCharField(label=_("Mobile telephone"), max_length=20,
         required=False, help_text="Example: 651 333 111")
+    area = forms.ModelChoiceField(None, label=_("Area"), required=settings.USERAREA_REQUIRED)
 
     def __init__(self, request, *args, **kwargs):
         super(EditProfileForm, self).__init__(*args, **kwargs)
         self.request = request
+        self.fields['area'].queryset = Area.objects.all().order_by('name')
 
     def clean_password1(self):
         password1 = self.cleaned_data["password1"]
@@ -82,7 +90,7 @@ class EditProfileForm(forms.ModelForm):
         model = Profile
         hidden = ()
         fields = ('photo', 'first_name', 'last_name', 'email', 'address',  'birth_date',
-            'description', 'land_line', 'mobile_tlf', 'email_updates')
+            'description', 'land_line', 'mobile_tlf', 'email_updates', 'area')
 
 class RemoveForm(forms.Form):
     reason = FormCharField(label=_("Reason"), required=True,

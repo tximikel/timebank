@@ -27,7 +27,7 @@ from django.shortcuts import redirect
 class ExtraProfileInline(admin.StackedInline):
     model = Profile
     fieldsets = (('Extra data', {
-        'fields': ('photo', 'birth_date', 'address', 'balance')
+        'fields': ('photo', 'birth_date', 'address', 'balance', 'area')
     }),)
     list_display = ('birth_date', 'address', 'balance')
 
@@ -89,7 +89,7 @@ class ProfileAdmin(UserAdmin):
     actions = [send_email_action, activate_user_action,
                deactivate_user_action,
                reset_password_user_action]
-    list_display = ('username', 'email', 'get_full_name', 'last_login',
+    list_display = ('username', 'get_full_name', 'area', 'email', 'last_login',
                     'is_active', 'is_staff', 'balance', 'karma')
 
     def save_model(self, request, model, form, change):

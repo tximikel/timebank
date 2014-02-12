@@ -195,6 +195,11 @@ SHOW_CAPTCHAS=True
 
 PUBLIC_USER_INFO = False
 
+#trukeados.net contributions; more info: http://trukeados.net/Software_moldaketak-adaptaciones
+#2013-01
+USERAREA_REQUIRED=False
+
+
 try:
     from local_settings import *
 except ImportError:

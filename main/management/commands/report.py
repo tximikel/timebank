@@ -45,6 +45,7 @@ def make_report3():
 def make_report1(query_filter=None, query_exclude=None):
     r = (('username', 'username', None),
          ('fullname', 'get_full_name', lambda x: x()),
+         ('area', 'area', lambda x: x.name if x is not None else '----------'),
          ('birth_date', 'birth_date', lambda x: x.strftime("%d/%m/%Y")),
          ('age', 'birth_date', lambda x: datetime.datetime.now().year - x.year),
          ('balance', 'balance', None),

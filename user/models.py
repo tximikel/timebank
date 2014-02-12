@@ -70,6 +70,7 @@ class Profile(User):
     # Saving the user language allows sending emails to him in his desired
     # language (among other things)
     lang_code = models.CharField(_("Language Code"), max_length=10, default='')
+    area = models.ForeignKey('serv.Area', related_name='profiles', null=True, blank=not(settings.USERAREA_REQUIRED), verbose_name=_("Area"))
 
     class Meta:
         verbose_name = _("User")

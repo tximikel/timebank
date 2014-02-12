@@ -60,6 +60,10 @@
                 <div>{{ profile.description }}</div>
             </li>
             <li>
+                <em>{% trans "Area" %}:</em>
+                <div>{{ profile.area }}</div>
+            </li>            
+            <li>
                 <em>{% trans "Global rating" %}:</em>
                 {% user_rating profile %}
             </li>
