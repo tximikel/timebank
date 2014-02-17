@@ -19,6 +19,10 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.contrib import admin
 
+#@tximikel add report
+from model_report import report
+report.autodiscover()
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -32,6 +36,8 @@ urlpatterns = patterns('',
     (r'^services/', include('serv.urls')),
     (r'^tasks/', include('tasks.urls')),
     (r'^notification/', include('notification.urls')),
+    #@tximikel add report
+    (r'^reports/', include('report.urls')),
     (r'^', include('main.urls')),
 )
 

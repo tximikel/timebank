@@ -1,0 +1,3 @@
+[submodule "django-model-report"]
+	path = django-model-report
+	url = https://github.com/juanpex/django-model-report.git

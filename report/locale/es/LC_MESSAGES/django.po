@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-25 23:30+0100\n"
+"PO-Revision-Date: 2013-02-25 23:38\n"
+"Last-Translator: Administrator Bidasoatu <bidasoatu@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
+
+#: models.py:18 models.py:41 reports.py:21
+msgid "Area id"
+msgstr "Cód. comunidad"
+
+#: models.py:19 models.py:42
+msgid "Area name"
+msgstr "Nombre comunidad"
+
+#: models.py:20 models.py:43
+msgid "User id"
+msgstr "Cód. usuarix"
+
+#: models.py:21 models.py:44
+msgid "User name"
+msgstr "Nombre usuarix"
+
+#: models.py:22 models.py:49
+msgid "Transference payee"
+msgstr "Transf. cobradas (h)"
+
+#: models.py:23 models.py:51
+msgid "Transference debtor"
+msgstr "Transf. pagadas (h)"
+
+#: models.py:24
+msgid "Balance total"
+msgstr "Balance total (h)"
+
+#: models.py:25
+msgid "Balance check"
+msgstr "Comprobación balance (h)"
+
+#: models.py:26 models.py:53
+msgid "Area"
+msgstr "Comunidad"
+
+#: models.py:28 models.py:55
+msgid "User"
+msgstr "Usuarix"
+
+#: models.py:36 reports.py:27
+msgid "Transferences balance check report"
+msgstr "Informe de comprobación de transferencias-balance"
+
+#: models.py:45
+msgid "Service id"
+msgstr "Cód. servicio"
+
+#: models.py:46
+msgid "Service name"
+msgstr "Nombre servicio"
+
+#: models.py:47
+msgid "Is offer?"
+msgstr "Es oferta?"
+
+#: models.py:48
+msgid "Transf. user"
+msgstr "Usuarix transf."
+
+#: models.py:50
+msgid "Sum. of Transf. payee"
+msgstr "Suma Transf. cobradas (h)"
+
+#: models.py:52
+msgid "Sum of Transf. debtor"
+msgstr "Suma Transf. pagadas (h)"
+
+#: models.py:60 reports.py:63
+msgid "Service transferences report"
+msgstr "Informe de transferencias de servicios"
+
+#: reports.py:24
+#, python-format
+msgid "%0.2f"
+msgstr ""
+
+#~ msgid "Transferences Balance Check Report"
+#~ msgstr "Informe de comprobación de transferencias-balance"

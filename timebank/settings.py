@@ -97,6 +97,8 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'main.context_processor.base',
+    #@tximikel add model_report datepicker    
+    'django.core.context_processors.static',
 )
 
 ROOT_URLCONF = 'timebank.urls'
@@ -138,6 +140,12 @@ INSTALLED_APPS = (
     'rosetta',
     'notification',
     'exts',
+    'south',
+    'pygraphviz',
+    'django_extensions',
+    #@tximikel add report
+    'model_report',
+    'report',
 )
 
 LOGIN_URL = '/'
