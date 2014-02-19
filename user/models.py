@@ -72,6 +72,9 @@ class Profile(User):
     lang_code = models.CharField(_("Language Code"), max_length=10, default='')
     area = models.ForeignKey('serv.Area', related_name='profiles', null=True, blank=not(settings.USERAREA_REQUIRED), verbose_name=_("Area"))
 
+    is_area_coord = models.BooleanField(_("Is area coordinator?"), null=False, blank=False, default=False)
+    is_collective_user =  models.BooleanField(_("Is collective user?"), null=False, blank=False, default=False)
+
     class Meta:
         verbose_name = _("User")
         verbose_name_plural = _("Users")

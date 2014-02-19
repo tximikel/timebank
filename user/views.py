@@ -33,6 +33,8 @@ from models import Profile
 from serv.models import Service
 from messages.models import Message
 
+from serv.models import Area
+
 class Register(ViewClass):
     def GET(self):
         form = RegisterForm()
@@ -59,6 +61,14 @@ class Register(ViewClass):
             message = I18nString(_("A new user has joined with the name %s . Please review his"
                 " data and make it active."), new_user.username)
             mail_owners(subject, message)
+
+            if new_user.area_id:
+                user_area = Area.objects.get(id=new_user.area_id)
+                if user_area:
+                    coord_user_list = user_area.profiles.filter(is_area_coord=True)
+                    if coord_user_list:
+                        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
+                            coord_user_list, fail_silently=True)
 
             current_site = Site.objects.get_current()
             subject = I18nString(_("You have joined as %(username)s in %(site_name)s"), {
